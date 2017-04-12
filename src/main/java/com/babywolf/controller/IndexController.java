@@ -1,5 +1,6 @@
 package com.babywolf.controller;
 
+import com.babywolf.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,6 +47,15 @@ public class IndexController {
         map.put("title", "hello");
         map.put("name", name);
         return map;
+    }
+
+
+    @RequestMapping(value = "/get/{id}/{name}")
+    public User getUser(int id, String name) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        return user;
     }
 
 }
